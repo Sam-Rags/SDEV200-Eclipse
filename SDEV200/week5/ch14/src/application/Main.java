@@ -20,11 +20,6 @@ public class Main extends Application {
 			pane.setVgap(5.5);
 			pane.setStyle("-fx-background-color: darkgray");
 						
-//			Image usFlag = new Image("file:C:\\Users\\lunes\\eclipse-workspace\\SDEV200\\week5\\ch14\\src\\images\\us-flag.png");
-//			Image uaFlag = new Image("file:C:\\Users\\lunes\\eclipse-workspace\\SDEV200\\week5\\ch14\\src\\images\\ua-flag.png");
-//			Image deFlag = new Image("file:C:\\Users\\lunes\\eclipse-workspace\\SDEV200\\week5\\ch14\\src\\images\\de-flag.png");
-//			Image plFlag = new Image("file:C:\\Users\\lunes\\eclipse-workspace\\SDEV200\\week5\\ch14\\src\\images\\pl-flag.png");
-			
 			String path = getClass().getResource("/images/us-flag.png").toExternalForm();
 			Image usFlag = new Image(path);
 			String path2 = getClass().getResource("/images/ua-flag.png").toExternalForm();
