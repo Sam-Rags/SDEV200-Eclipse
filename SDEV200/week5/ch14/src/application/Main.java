@@ -3,13 +3,11 @@ package application;
 import javafx.application.Application;
 import javafx.stage.Stage;
 import javafx.scene.Scene;
-import javafx.scene.layout.BorderPane;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.GridPane;
 import javafx.geometry.Pos;
 import javafx.geometry.Insets;
-import javafx.scene.control.Label;
 
 public class Main extends Application {
 	@Override
@@ -22,10 +20,21 @@ public class Main extends Application {
 			pane.setVgap(5.5);
 			pane.setStyle("-fx-background-color: darkgray");
 						
-			Image usFlag = new Image("file:C:\\Users\\lunes\\eclipse-workspace\\SDEV200\\week5\\ch14\\src\\images\\us-flag.png");
-			Image uaFlag = new Image("file:C:\\Users\\lunes\\eclipse-workspace\\SDEV200\\week5\\ch14\\src\\images\\ua-flag.png");
-			Image deFlag = new Image("file:C:\\Users\\lunes\\eclipse-workspace\\SDEV200\\week5\\ch14\\src\\images\\de-flag.png");
-			Image plFlag = new Image("file:C:\\Users\\lunes\\eclipse-workspace\\SDEV200\\week5\\ch14\\src\\images\\pl-flag.png");
+//			Image usFlag = new Image("file:C:\\Users\\lunes\\eclipse-workspace\\SDEV200\\week5\\ch14\\src\\images\\us-flag.png");
+//			Image uaFlag = new Image("file:C:\\Users\\lunes\\eclipse-workspace\\SDEV200\\week5\\ch14\\src\\images\\ua-flag.png");
+//			Image deFlag = new Image("file:C:\\Users\\lunes\\eclipse-workspace\\SDEV200\\week5\\ch14\\src\\images\\de-flag.png");
+//			Image plFlag = new Image("file:C:\\Users\\lunes\\eclipse-workspace\\SDEV200\\week5\\ch14\\src\\images\\pl-flag.png");
+			
+			String path = getClass().getResource("/images/us-flag.png").toExternalForm();
+			Image usFlag = new Image(path);
+			String path2 = getClass().getResource("/images/ua-flag.png").toExternalForm();
+			Image uaFlag = new Image(path2);
+			String path3 = getClass().getResource("/images/de-flag.png").toExternalForm();
+			Image deFlag = new Image(path3);
+			String path4 = getClass().getResource("/images/pl-flag.png").toExternalForm();
+			Image plFlag = new Image(path4);
+
+
 			
 			ImageView pictureViewer = new ImageView(usFlag);
 			pictureViewer.setFitHeight(100);
