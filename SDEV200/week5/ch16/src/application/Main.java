@@ -9,6 +9,8 @@ import javafx.scene.text.Text;
 import javafx.scene.control.Slider;
 import javafx.geometry.Pos;
 import javafx.geometry.Insets;
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
 
 public class Main extends Application {
 	@Override
@@ -36,13 +38,10 @@ public class Main extends Application {
 			opText.setStyle("-fx-font: 18 arial;");
 			
 			// Create the sliders for the color changing
-			Slider slRed = new Slider(0, 1, .5);
-			Slider slGreen = new Slider(0, 1, .5);
-			Slider slBlue = new Slider(0, 1, .5);
-			Slider slOpacity = new Slider(0, 1, .5);
-			
-			
-			
+			Slider slRed = new Slider(0, 1, 1);
+			Slider slGreen = new Slider(0, 1, 1);
+			Slider slBlue = new Slider(0, 1, 1);
+			Slider slOpacity = new Slider(0, 1, 1);
 			
 			// Add all elements to the GridPane
 			pane.add(colorText, 1, 0);
@@ -54,6 +53,14 @@ public class Main extends Application {
 			pane.add(slGreen, 1, 2);
 			pane.add(slBlue, 1, 3);
 			pane.add(slOpacity, 1, 4);
+			
+			//logic for the sliders
+			slRed.valueProperty().addListener(new ChangeListener<Number>() {
+				public void changed(ObservableValue<? extends Number> ov, 
+						Number old_val, Number new_val) {
+						colorText.setOpacity(new_val.doubleValue());
+				}
+			});
 			
 			
 			// Set the scene
