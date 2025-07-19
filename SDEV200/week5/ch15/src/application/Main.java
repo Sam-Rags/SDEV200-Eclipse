@@ -18,6 +18,7 @@ public class Main extends Application {
 			Circle circle = new Circle(100);
 			circle.setStroke(Color.BLACK);
 			circle.setFill(Color.WHITE);
+			circle.setStyle("-fx-fill-color: black");
 			pane.getChildren().add(circle);
 			
 			// set's the circle object's fill to BLACK when mouse pressed on the pane
