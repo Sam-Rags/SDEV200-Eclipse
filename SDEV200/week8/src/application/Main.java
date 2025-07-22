@@ -7,25 +7,37 @@ import javafx.geometry.Pos;
 import javafx.stage.Stage;
 import javafx.scene.Scene;
 import javafx.scene.layout.BorderPane;
+import javafx.scene.layout.GridPane;
+import javafx.scene.layout.VBox;
+import javafx.scene.layout.HBox;
+import javafx.scene.layout.StackPane;
 import javafx.scene.paint.Color;
+import javafx.scene.shape.Rectangle;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import javafx.geometry.Insets;
 
 
 public class Main extends Application {
 	
 	private Label lblStatus = new Label();
+	private Label aboutLbl = new Label();
 	private TextField textInput = new TextField();
+	private Label selectLbl = new Label();
 	
 	@Override
 	public void start(Stage primaryStage) {
 		try {
-			BorderPane root = new BorderPane();
+			selectLbl.setText("Select Conversion type below");
+			aboutLbl.setText("Unit Converter by Sam Ragsdale \u00a9 2025");
 			Button tempButton = new Button("Convert");
 			Button celsiusButton = new Button("Celsius");
 			Button fahrenheitButton = new Button("Fahrenheit");
-			Button tempConvert = new Button("Convert Temperature");
+			Button degreesConvert = new Button("Convert Temperature");
+			Button weightConvert = new Button("Convert Weight");
+			Button volumeConvert = new Button("Convert Volume");
+			Button lengthConvert = new Button("Convert Length");
 			TemperatureConversion converter = new TemperatureConversion();
 			
 			// This button invokes the convert method of the TemperatureConversion object
@@ -54,7 +66,7 @@ public class Main extends Application {
 														+ converter.getOutputUnit());
 			});
 			
-			tempConvert.setOnAction(new EventHandler<ActionEvent>() {
+			degreesConvert.setOnAction(new EventHandler<ActionEvent>() {
 				@Override public void handle(ActionEvent e) {
 				Stage stage = new Stage();
 				stage.setWidth(400);
@@ -62,14 +74,15 @@ public class Main extends Application {
 				stage.show();
 			}
 			});
-			
-			Scene scene = new Scene(root,400,400, Color.LIGHTBLUE);
-			root.setCenter(tempButton);
-			root.setBottom(lblStatus);
-			root.setTop(textInput);
-			root.setRight(fahrenheitButton);
-//			root.setLeft(celsiusButton);
-			root.setLeft(tempConvert);
+			GridPane root = new GridPane();
+			root.add(degreesConvert, 1, 1);
+			root.add(weightConvert, 1, 3);
+			root.add(volumeConvert, 1, 4);
+			root.add(lengthConvert, 1, 5);
+			root.add(selectLbl, 1, 0);
+			root.setColumnSpan(selectLbl, 2);
+			root.add(aboutLbl, 3, 7);
+			Scene scene = new Scene(root,400,200);
 			scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
 			primaryStage.setScene(scene);
 			primaryStage.show();
