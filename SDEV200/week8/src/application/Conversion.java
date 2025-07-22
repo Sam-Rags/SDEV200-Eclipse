@@ -11,8 +11,12 @@ public abstract class Conversion {
 		 this.outputUnit = outputUnit;
 	}
 	
-	void setUnit(String s) {
+	void setInputUnit(String s) {
 		this.inputUnit = s;
+	}
+	
+	void setOutputUnit(String s) {
+		this.outputUnit = s;
 	}
 	
 	String getInputUnit() {

@@ -1,6 +1,8 @@
 package application;
 	
 import javafx.application.Application;
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.geometry.Pos;
 import javafx.stage.Stage;
 import javafx.scene.Scene;
@@ -23,6 +25,7 @@ public class Main extends Application {
 			Button tempButton = new Button("Convert");
 			Button celsiusButton = new Button("Celsius");
 			Button fahrenheitButton = new Button("Fahrenheit");
+			Button tempConvert = new Button("Convert Temperature");
 			TemperatureConversion converter = new TemperatureConversion();
 			
 			// This button invokes the convert method of the TemperatureConversion object
@@ -51,12 +54,22 @@ public class Main extends Application {
 														+ converter.getOutputUnit());
 			});
 			
+			tempConvert.setOnAction(new EventHandler<ActionEvent>() {
+				@Override public void handle(ActionEvent e) {
+				Stage stage = new Stage();
+				stage.setWidth(400);
+				stage.setHeight(400);
+				stage.show();
+			}
+			});
+			
 			Scene scene = new Scene(root,400,400, Color.LIGHTBLUE);
 			root.setCenter(tempButton);
 			root.setBottom(lblStatus);
 			root.setTop(textInput);
 			root.setRight(fahrenheitButton);
-			root.setLeft(celsiusButton);
+//			root.setLeft(celsiusButton);
+			root.setLeft(tempConvert);
 			scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
 			primaryStage.setScene(scene);
 			primaryStage.show();
