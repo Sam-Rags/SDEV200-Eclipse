@@ -66,21 +66,19 @@ public class Main extends Application {
 												lblStatus.setText("Converting from " + converter.getInputUnit() + " to "
 														+ converter.getOutputUnit());
 			});
-			
+			/** button press creates a new object of ConversionWindow
+			 * The ConversionWindow class contains all of the logic for the
+			 * window look (buttons, etc) & creates an object of TemperatureConversion
+			 */
 			degreesConvert.setOnAction(new EventHandler<ActionEvent>() {
-				TemperatureConversion converter = new TemperatureConversion();
+				
+				ConversionWindow window = new ConversionWindow();
 				@Override public void handle(ActionEvent e) {
-				Stage stage = new Stage();
-				GridPane grid = new GridPane();
-				Scene scene = new Scene(grid, 200, 200);
-				stage.setScene(scene);
-				stage.show();
-				Label label = new Label();
-				label.setText("This is a test");
-				grid.add(label, 0, 0);
+				window.TemperatureConversionWindow();
 				
 				
 			}
+			
 			});
 			
 			weightConvert.setOnAction(new EventHandler<ActionEvent>() {
