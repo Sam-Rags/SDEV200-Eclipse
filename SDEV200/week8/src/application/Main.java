@@ -5,6 +5,7 @@ import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.geometry.Pos;
 import javafx.stage.Stage;
+import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.GridPane;
@@ -67,6 +68,33 @@ public class Main extends Application {
 			});
 			
 			degreesConvert.setOnAction(new EventHandler<ActionEvent>() {
+				TemperatureConversion converter = new TemperatureConversion();
+				@Override public void handle(ActionEvent e) {
+				Stage stage = new Stage();
+				GridPane grid = new GridPane();
+				Scene scene = new Scene(grid, 200, 200);
+				stage.setScene(scene);
+				stage.show();
+				Label label = new Label();
+				label.setText("This is a test");
+				grid.add(label, 0, 0);
+				
+				
+			}
+			});
+			
+			weightConvert.setOnAction(new EventHandler<ActionEvent>() {
+				@Override public void handle(ActionEvent e) {
+				Stage stage = new Stage();
+				GridPane grid = new GridPane();
+				Scene scene = new Scene(grid, 200, 200);
+				stage.setWidth(400);
+				stage.setHeight(400);
+				stage.setScene(scene);
+			}
+			});
+			
+			volumeConvert.setOnAction(new EventHandler<ActionEvent>() {
 				@Override public void handle(ActionEvent e) {
 				Stage stage = new Stage();
 				stage.setWidth(400);
@@ -74,6 +102,16 @@ public class Main extends Application {
 				stage.show();
 			}
 			});
+			
+			lengthConvert.setOnAction(new EventHandler<ActionEvent>() {
+				@Override public void handle(ActionEvent e) {
+				Stage stage = new Stage();
+				stage.setWidth(400);
+				stage.setHeight(400);
+				stage.show();
+			}
+			});
+			
 			GridPane root = new GridPane();
 			root.add(degreesConvert, 1, 1);
 			root.add(weightConvert, 1, 3);
