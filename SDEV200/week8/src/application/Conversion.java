@@ -1,5 +1,6 @@
 package application;
 
+// Main abstract class Conversion which is extended by the 4 Conversion types
 public abstract class Conversion {
 
 	protected String inputUnit;
