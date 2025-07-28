@@ -17,7 +17,7 @@ public class ConversionWindow {
 		Stage stage = new Stage();
 		GridPane grid = new GridPane();
 		Label aboutLbl = new Label();
-		aboutLbl.setText("Unit Converter by Sam Ragsdale \u00a9 2025");
+		aboutLbl.setText("Unit Converter by Sam Ragsdale \u00a9 2025  ");
 		Scene scene = new Scene(grid, 415, 180);
 		stage.setScene(scene);
 		stage.setTitle("Temperature Conversion");
@@ -68,7 +68,7 @@ public class ConversionWindow {
 		Stage stage = new Stage();
 		GridPane grid = new GridPane();
 		Label aboutLbl = new Label();
-		aboutLbl.setText("Unit Converter by Sam Ragsdale \u00a9 2025");
+		aboutLbl.setText("Unit Converter by Sam Ragsdale \u00a9 2025  ");
 		Scene scene = new Scene(grid, 415, 180);
 		stage.setTitle("Weight Conversion");
 		stage.setScene(scene);
@@ -120,7 +120,7 @@ public class ConversionWindow {
 		Stage stage = new Stage();
 		GridPane grid = new GridPane();
 		Label aboutLbl = new Label();
-		aboutLbl.setText("Unit Converter by Sam Ragsdale \u00a9 2025");
+		aboutLbl.setText("Unit Converter by Sam Ragsdale \u00a9 2025  ");
 		Scene scene = new Scene(grid, 415, 180);
 		stage.setTitle("Volume Conversion");
 		stage.setScene(scene);
@@ -171,7 +171,7 @@ public class ConversionWindow {
 		Stage stage = new Stage();
 		GridPane grid = new GridPane();
 		Label aboutLbl = new Label();
-		aboutLbl.setText("Unit Converter by Sam Ragsdale \u00a9 2025");
+		aboutLbl.setText("Unit Converter by Sam Ragsdale \u00a9 2025  ");
 		Scene scene = new Scene(grid, 415, 180);
 		stage.setTitle("Length Conversion");
 		stage.setScene(scene);

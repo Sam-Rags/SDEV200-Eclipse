@@ -20,7 +20,7 @@ public class Main extends Application {
 		try {
 			// Labels that prompt for input & display author copyright
 			selectLbl.setText("Select Conversion type below");
-			aboutLbl.setText("Unit Converter by Sam Ragsdale \u00a9 2025");
+			aboutLbl.setText("Unit Converter by Sam Ragsdale \u00a9 2025  ");
 			
 			// Button creation which will each open a new window of its respective type
 			Button degreesConvert = new Button("Convert Temperature");
